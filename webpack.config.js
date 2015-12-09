@@ -15,7 +15,6 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('[name].css')
   ],
   module: {
     loaders: [{
@@ -25,7 +24,7 @@ module.exports = {
     },
     {
       test: /\.less$/,
-      loader: ExtractTextPlugin.extract('style-loader', 'css-loader!less-loader')
+      loader: 'style-loader!css-loader!less-loader'
     },
     {
       test: /\.css$/,
